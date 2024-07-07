@@ -1,13 +1,17 @@
 pipeline {
   agent { dockerfile true }
   stages {
-    stage('Test') {
+    stage('Test-node') {
       steps {
-        sh '''
-          node --version
-          git --version
-          curl --version
-        '''
+        sh 'node --version'
+      }
+    stage('Test-git') {
+      steps {
+        sh 'git --version'
+      }
+    stage('Test-curl') {
+      steps {
+        sh 'curl --version'
       }
     }
   }
