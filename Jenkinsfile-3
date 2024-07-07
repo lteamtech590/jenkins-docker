@@ -5,10 +5,12 @@ pipeline {
       steps {
         sh 'node --version'
       }
+    }  
     stage('Test-git') {
       steps {
         sh 'git --version'
       }
+    }
     stage('Test-curl') {
       steps {
         sh 'curl --version'
